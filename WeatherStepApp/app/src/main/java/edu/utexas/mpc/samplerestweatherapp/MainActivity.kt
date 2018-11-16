@@ -24,11 +24,13 @@ class MainActivity : AppCompatActivity() {
     // are energy intensive
     lateinit var textView: TextView
     lateinit var retrieveButton: Button
+
     lateinit var syncButton: Button
     lateinit var imageView: ImageView
 
     lateinit var queue: RequestQueue
     lateinit var gson: Gson
+
     lateinit var mostRecentWeatherResult: WeatherResult
     lateinit var mqttAndroidClient: MqttAndroidClient
 
@@ -64,7 +66,9 @@ class MainActivity : AppCompatActivity() {
                 // this subscribes the client to the subscribe topic
                 mqttAndroidClient.subscribe(subscribeTopic, 0)
                 val message = MqttMessage()
-                message.payload = mostRecentWeatherResult.weather.get(0).description.toByteArray()
+               // val weather = mostRecentWeatherResult.weather.get(0).description
+                //message.payload = weather.toByteArray()
+                message.payload = ("abc").toByteArray()
 
                 // this publishes a message to the publish topic
                 mqttAndroidClient.publish(publishTopic, message)
@@ -116,20 +120,6 @@ class MainActivity : AppCompatActivity() {
         // Add the request to the RequestQueue.
         queue.add(stringRequest)
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }
