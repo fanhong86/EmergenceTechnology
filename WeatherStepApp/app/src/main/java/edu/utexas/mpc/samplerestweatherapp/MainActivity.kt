@@ -66,9 +66,10 @@ class MainActivity : AppCompatActivity() {
                 // this subscribes the client to the subscribe topic
                 mqttAndroidClient.subscribe(subscribeTopic, 0)
                 val message = MqttMessage()
-               // val weather = mostRecentWeatherResult.weather.get(0).description
-                //message.payload = weather.toByteArray()
-                message.payload = ("abc").toByteArray()
+                val weather = mostRecentWeatherResult.weather.get(0).description
+                //weather.toString()
+                message.payload = weather.toByteArray()
+                //message.payload = ("abc").toByteArray()
 
                 // this publishes a message to the publish topic
                 mqttAndroidClient.publish(publishTopic, message)
