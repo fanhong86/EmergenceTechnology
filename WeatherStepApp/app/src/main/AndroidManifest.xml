@@ -22,7 +22,10 @@
         </activity>
 
         <service android:name="org.eclipse.paho.android.service.MqttService" />
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5dea23ad9cf9b9ed47e7531d69fda958871471c3
     </application>
 
 </manifest>

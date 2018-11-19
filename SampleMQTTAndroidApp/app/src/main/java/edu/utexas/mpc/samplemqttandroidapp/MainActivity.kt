@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity() {
                 // this subscribes the client to the subscribe topic
                 mqttAndroidClient.subscribe(subscribeTopic, 0)
                 val message = MqttMessage()
-                message.payload = ("Hello World").toByteArray()
+                message.payload = ("abc").toByteArray()
 
                 // this publishes a message to the publish topic
                 mqttAndroidClient.publish(publishTopic, message)
