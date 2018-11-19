@@ -117,21 +117,6 @@ class MainActivity : AppCompatActivity() {
         queue.add(stringRequest)
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
 
 class WeatherResult(val id: Int, val name: String, val cod: Int, val coord: Coordinates, val main: WeatherMain, val weather: Array<Weather>)
