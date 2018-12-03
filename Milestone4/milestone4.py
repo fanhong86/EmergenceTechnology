@@ -17,8 +17,10 @@ def _process_packet(data):
             client.publish(publishtopic, value)
             
 def on_message(client, userdata, message):
-    print("message received ", str(message.payload.decode("utf-8")))
-    print("message topic=", message.topic)
+    string=str(message.payload.decode("utf-8")).split()
+    print("temp_min=", string[0])
+    print("temp_max=", string[1])
+    print("humidity=", string[2])
     time.sleep(5)
 
 
